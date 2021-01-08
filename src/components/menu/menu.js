@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import React, {useCallback, useEffect, useState} from "react";
 import {productService} from "../../service/products-service";
-import {getProducts} from "../../redux/actions-creator/actCreators";
+import {addProduct, getProducts} from "../../redux/actions-creator/actCreators";
 import Slider from "./slider/slider";
 
 
@@ -19,7 +19,10 @@ function Menu() {
         fetchData()
     },  []);
 
-    console.log(count)
+    const handAddProduct = (prod) =>{
+        dispatch(addProduct(prod))
+    }
+
     return (
         <div>
         <Slider />
@@ -31,7 +34,7 @@ function Menu() {
                     <div key={product.id}>
                         <h2>{product.id}</h2>
                         <p>{product.title}</p>
-                        <button>Save</button>
+                        <button onClick={()=> handAddProduct(product)}>Save</button>
                     </div>
                 )
             }
