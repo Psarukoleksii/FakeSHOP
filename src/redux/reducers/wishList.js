@@ -1,5 +1,6 @@
 const initialState = {
-    wishList: []
+    wishList: [],
+    summ: [],
 }
 
 export const wishList = (state=initialState, action) =>{
@@ -7,9 +8,11 @@ export const wishList = (state=initialState, action) =>{
         case 'ADD_PRODUCT':{
             let arr = [...state.wishList];
             arr.push(action.payload);
-            console.log(action.payload)
-            console.log(arr);
             return {...state, wishList: arr}
+        }
+        case 'NEW_PRICES':{
+            console.log(action.payload)
+            return {...state, summ: action.payload}
         }
         default:{
             return state;
