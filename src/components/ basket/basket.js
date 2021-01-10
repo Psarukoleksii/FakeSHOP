@@ -1,14 +1,11 @@
 import Forms from "./forms/forms";
 import {useSelector} from "react-redux";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function Basket() {
 
     const {wishList} = useSelector(({wishList: {wishList}}) => ({wishList}));
     const [counter, setCounter] = useState(0)
-    // const arr = wishList.map(value => value.price);
-    // const dispatch = useDispatch();
-
 
     const [numb, setNumb] = useState([...wishList]);
 
@@ -25,17 +22,19 @@ function Basket() {
             console.log(filter)
             const asd1 = filter.price * +e.target.value;
             let xxx = {...filter, price: asd1}
-            numb.splice(a, 1, xxx);
-            setNumb(numb);
-            console.log(numb)
-            // const [filter] = wishList.filter((value) => value.id === +e.target.id);
-            // const asd1 = filter.price * +e.target.value;
-            // let xxx = {...filter, price: asd1}
-            // wishList.splice(a, 1, xxx)
-            // console.log(wishList)
+            let numbCopy = [...numb];
+            numbCopy.splice(a, 1, xxx);
+            setNumb(numbCopy);
         }
     }
-    console.log(numb)
+
+
+    let sumNumb = numb.map((value)=>{
+        return value.price
+    })
+
+    let setSum = sumNumb.reduce((acc, el)=> (acc += el), 0)
+
 
     return (
         <div>
@@ -46,14 +45,14 @@ function Basket() {
                             <div>
                                 <h2>{value.title} - {value.price} </h2>
                                 <form>
-                                    <input type="number" defaultValue={1} onInput={handChange} id={value.id}/>
+                                    <input type="number" defaultValue={1} onChange={handChange} id={value.id}/>
                                 </form>
                             </div>
                         )
                     }
                 )
             }
-            Сумма замовлення:{counter}
+            Сумма замовлення:{setSum.toFixed(2)}
             <h1>Basket</h1>
             <Forms/>
         </div>
