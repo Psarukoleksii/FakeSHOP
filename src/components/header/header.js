@@ -1,18 +1,15 @@
 import React from 'react'
 import { NavLink} from "react-router-dom";
-import './header.module.css'
-import {useSelector} from "react-redux";
+import './header.module.css';
 
 function Header() {
-    const {wishList} = useSelector(({wishList: {wishList}}) => ({wishList}));
     return (
 
        <navbar>
-            <span className={'logo'}><a href={'/'} className={'a'}>Main</a></span>
+            <span className={'logo'}><NavLink to={'/'} className={'a'}><img src="https://i.ibb.co/jZmKDvp/1.png" alt=""/></NavLink></span>
             <ul>
                 <li><NavLink to={'/menu'} className={'a'}>Menu</NavLink></li>
                 <li><NavLink to={'/basket'} className={'a'}>Basket</NavLink></li>
-                <span>{wishList.length}</span>
                 <li><NavLink to={'/aboutus'} className={'a'}>AboutUs</NavLink></li>
             </ul>
        </navbar>

@@ -12,10 +12,9 @@ function Slider(){
                        cancelOnInteraction={true}
                        interval={3000}
                         className={'slider'}>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+            <div><img src="https://www.vingudpss.gov.ua/sites/default/files/styles/505x320m/public/2611201901.jpg?itok=xvfZRk73&v=1574772020" alt=""/></div>
+            <div><img src="https://amrita.club/_sh/1/135c.jpg" alt=""/></div>
+            <div><img src="https://www.paradoxplaza.com/on/demandware.static/-/Sites-paradox-us-catalog/default/dw9a292350/Logos/TodaysDeals-OnSale2.png" alt=""/></div>
         </AutoplaySlider>
 
     )
