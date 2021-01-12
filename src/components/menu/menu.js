@@ -27,8 +27,7 @@ function Menu() {
         <div>
         <Slider />
         <div>
-
-        {products.map((product) => {
+            {products.map((product) => {
             if (product.id <= count.count) {
                 return (
                     <div key={product.id}>

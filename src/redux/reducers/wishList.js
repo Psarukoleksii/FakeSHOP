@@ -1,6 +1,6 @@
 const initialState = {
     wishList: [],
-    summ: [],
+
 }
 
 export const wishList = (state=initialState, action) =>{
@@ -9,10 +9,19 @@ export const wishList = (state=initialState, action) =>{
             let arr = [...state.wishList];
             arr.push(action.payload);
             return {...state, wishList: arr}
+            break;
         }
-        case 'NEW_PRICES':{
-            console.log(action.payload)
-            return {...state, summ: action.payload}
+        case 'ADD_LOCAL':{
+            console.log(state.wishList)
+            localStorage.setItem('InfoOrder', JSON.stringify(action.payload))
+            return {...state, wishList: []}
+        }
+        case 'DELETE_PRODUCT':{
+            let numbCopy = [...state.wishList]
+            let wishListFilter = numbCopy.filter((v)=> v.id !== +action.payload.id)
+            return {...state, wishList: wishListFilter}
+
+
         }
         default:{
             return state;
