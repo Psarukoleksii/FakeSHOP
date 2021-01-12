@@ -2,46 +2,42 @@ import {useDispatch, useSelector} from "react-redux";
 import React, {useCallback, useEffect, useState} from "react";
 import {productService} from "../../service/products-service";
 import {addProduct, getProducts} from "../../redux/actions-creator/actCreators";
-import Slider from "./slider/slider";
+import {Loading} from "../loading/loading";
+import {Error} from "../error/error";
+import {MenuList} from "./menuList/menuList";
 
 
 function Menu() {
     const {products} = useSelector(({products: {products}}) => ({products}))
-    const [count, setCount] = useState({count: 0, disabled: false});
+
+    const [state, setState] = useState({
+        loading: true,
+        error: false,
+        button: true,
+    })
     const dispatch = useDispatch();
     const fetchData = useCallback(async () => {
-          const productsServ = await productService.getProducts();
-          setCount({count: productsServ.length * 0.5, disabled: false})
-          dispatch(getProducts(productsServ));
-        }, [dispatch]);
+        const productsServ = await productService.getProducts();
+        setState(({loading, error, button}) => {
+            return {loading: false, error: false, button: true}
+        })
+        dispatch(getProducts(productsServ));
+    }, [dispatch]);
 
     useEffect(() => {
         fetchData()
-    },  []);
+    }, []);
 
-    const handAddProduct = (prod) =>{
-        dispatch(addProduct(prod))
-    }
+    const icoLoading = state.loading ? <Loading/> : null;
+    const errorIndication = state.error ? <Error/> : null;
+    const menuList = !state.error && !state.loading ? <MenuList products={products}/> : null;
+
 
     return (
         <div>
-        <Slider />
-        <div>
-
-        {products.map((product) => {
-            if (product.id <= count.count) {
-                return (
-                    <div key={product.id}>
-                        <h2>{product.id}</h2>
-                        <p>{product.title}</p>
-                        <button onClick={()=> handAddProduct(product)}>Save</button>
-                    </div>
-                )
-            }
-        })
-        }
-            {!count.disabled && <button style={{background: 'red', borderRadius: '5px', padding: '10px 20px', margin: '20px' }} onClick={()=>{setCount({count:products.length, disabled: true})}}>All</button>}
-        </div>
+            {icoLoading}
+            {errorIndication}
+            {menuList}
         </div>
     );
 }

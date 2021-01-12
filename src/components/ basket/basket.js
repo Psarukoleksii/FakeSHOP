@@ -29,16 +29,15 @@ function Basket() {
     }
 
 
-    let sumNumb = numb.map((value)=>{
+    let sumNumb = numb.map((value) => {
         return value.price
     })
 
-    let setSum = sumNumb.reduce((acc, el)=> (acc += el), 0)
+    let setSum = sumNumb.reduce((acc, el) => (acc += el), 0)
 
 
     return (
         <div>
-
             {
                 numb.map(value => {
                         return (
