@@ -9,3 +9,12 @@
     margin-top: 70px;
     color: darkslategrey;
 }
+
+.MenuListFormForFilter{
+    text-align: center;
+    padding: 10px;
+}
+
+.MenuListFormForFilter .ListRadioButton input{
+    margin: 20px;
+}

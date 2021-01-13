@@ -1,0 +1,7 @@
+label p:first-letter{
+    text-transform: capitalize;
+}
+label p{
+    display: inline-block;
+    margin: 0px;
+}
