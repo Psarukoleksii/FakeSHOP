@@ -26,6 +26,7 @@ const MenuItem = ({product}) => {
             </div>
             <div className={'aboutProduct'}>
                 <p>{product.title}</p>
+                <p>{product.price} $</p>
                 {state.button ? <button onClick={() => handAddProduct(product)} id={product.id}>Add to basket</button> :
                     <li><NavLink to={'/basket'} className={'a'}>To Basket</NavLink></li>}
             </div>
