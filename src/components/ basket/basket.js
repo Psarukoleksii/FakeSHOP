@@ -6,6 +6,8 @@ import {CatchEmpty} from "./catchEmpty/catchEmpty";
 import {ValidatorName} from "./Validators/ValidatorName";
 import {ValidatorPhone} from "./Validators/ValidatorPhone";
 import {ValidatorAddress} from "./Validators/ValidatorAddress";
+import './basket.css'
+import Menu from "../menu/menu";
 
 
 
@@ -58,31 +60,33 @@ function Basket() {
         dispatch(deleteProduct(prod))
 
     }
-
-
-
-
-
-
-
+    
 return (
         <div>
             <div>
             {   numb.length === 0  ?  <CatchEmpty position={form.position}/>: <BasketList numb={numb} handChange={handChange} deleteProd={deleteProd}/>}
-            </div>
+            </div >
             <form onSubmit={shareForms} >
-                <label>Name: <input onChange={ (e) =>{setForm({...form, name:e.target.value })}} type="text"  value={form.name}/>
+                <div className={'containInput'}>
+                    <label htmlFor={'name'}>Name:</label>
+                    <input onChange={ (e) =>{setForm({...form, name:e.target.value })}} type="text"  value={form.name} id={'name'}/>
                     {!!form.name && <ValidatorName name={form.name}/> }
-                </label>
-                <label>Phone number: <input onChange={(e)=> {setForm({...form, phone:e.target.value })}} type="tel" id={'phone'} value={form.phone}/>
+                </div>
+                <div className={'containInput'}>
+                    <label htmlFor={'phone'}>Phone:</label>
+                    <input onChange={(e)=> {setForm({...form, phone:e.target.value })}} type="tel" id={'phone'} value={form.phone}/>
                     {!!form.phone && <ValidatorPhone phone={form.phone}/> }
-                </label>
-                <label>Address: <input onChange={(e)=> {setForm({...form, address:e.target.value })}} type="search" value={form.address}/>
+                </div>
+                <div className={'containInput'}>
+                    <label htmlFor={'address'}>Address:</label>
+                    <input onChange={(e)=> {setForm({...form, address:e.target.value })}} type="text" value={form.address} id={'address'}/>
                     {!!form.address && <ValidatorAddress address={form.address}/> }
-                </label>
-                <button disabled={!numb.length || !form.name || !form.phone || !form.address} >Save</button>
+                </div>
+
+                <button disabled={!numb.length || !form.name || !form.phone || !form.address} className={'submit'}>Save</button>
+                {form.position && (<div style={{background: 'rgba(11,156,49,0.8)', width: '100px', height: '25px', display: 'inline-block', textAlign: 'center',  }}>SUCCESS</div>)}
             </form>
-            {form.position && <h1>Success</h1>}
+
         </div>
     );
 }

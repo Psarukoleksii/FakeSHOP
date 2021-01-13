@@ -11,7 +11,7 @@ export const BasketList = ({numb, handChange, deleteProd}) =>{
 
 
     return (
-        <div>
+        <div >
         { numb.map(value => {
                     return (
                         <BasketItem key={value.id} value={value} handChange={handChange} deleteProd={deleteProd} />
