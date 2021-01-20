@@ -4,7 +4,6 @@ import MenuItem from "../menuItem/menuItem";
 import Slider from "../slider/slider";
 import {MenuFilter} from "../menuFilter/menuFilter";
 import {filterCategory} from "./filterCategory";
-import {store} from "../../../redux/store";
 import {Sort} from "./sortComponents";
 import {MenuSorting} from "./MenuSorting/MenuSorting";
 

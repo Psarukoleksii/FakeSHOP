@@ -5,6 +5,7 @@ import logoSvjat from  '../../service/svjatFoto.jpg';
 function AboutUs() {
     return (
         <div className={'containerResume'}>
+            <div className={'container'}>
             <div className={'row'}>
                 <div className={'col-sm-6'} >
                     <div className={'resume'}>
@@ -30,6 +31,7 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

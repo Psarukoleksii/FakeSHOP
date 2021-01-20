@@ -36,7 +36,5 @@
 .resume .icons a:hover{
   transition: .5s;
   color: red;
-  transform: scale(1.1);
 }
-
 
