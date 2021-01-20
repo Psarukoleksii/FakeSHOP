@@ -1,0 +1,42 @@
+
+.containerResume{
+  margin-top: 1rem;
+}
+.resume{
+  margin: 0 auto;
+  border: 2px solid darkslategrey;
+  width: 400px;
+  height: 500px;
+  border-radius: 25px;
+}
+.resume h2, .resume p{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 400px;
+}
+.resume img{
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+.resume h2, .resume p,.resume img{
+  margin-top: 1rem;
+}
+.resume .icons{
+  display: flex;
+  margin: 1rem auto;
+  width: 100px;
+  justify-content: space-between;
+}
+.resume .icons a{
+  color: gray;
+}
+.resume .icons a:hover{
+  transition: .5s;
+  color: red;
+  transform: scale(1.1);
+}
+
+

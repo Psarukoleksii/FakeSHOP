@@ -1,5 +1,5 @@
 import React from 'react';
-import './menuFilter.css';
+import '../menuList/menuList.css'
 
 export const MenuFilter = ({atribut, handFilterProduct}) => {
     return (

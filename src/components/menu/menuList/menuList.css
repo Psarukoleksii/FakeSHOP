@@ -18,3 +18,36 @@
 .MenuListFormForFilter .ListRadioButton input{
     margin: 20px;
 }
+
+/***************************************************/
+.containerMenuFilterAndSorting{
+    max-width: 50rem;
+    border: 2px solid darkslategrey;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.containerMenuFilterAndSorting .MenuFilterMain h2, .containerMenuFilterAndSorting .MenuSortingMain h2{
+    text-align: center;
+}
+.containerMenuFilterAndSorting .MenuFilterMain .containerMenuFilter, .containerMenuFilterAndSorting .MenuSortingMain .containerSort{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inputFromFilter, .inputSort{
+    display: inline-block;
+    font-style: italic;
+    padding: 0;
+    margin-left: 1.5rem;
+}
+
+.inputFromFilter label p:first-letter{
+    text-transform: capitalize;
+}
+.inputFromFilter label p{
+    display: inline-block;
+}
+
+
