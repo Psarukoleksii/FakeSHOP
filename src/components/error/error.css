@@ -1,0 +1,19 @@
+.error .errorSection{
+    text-align: center;
+    background: darkslategrey;
+    margin: 10rem auto;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 7.5rem;
+}
+
+.error .errorSection h2{
+    color: white;
+    padding-top: 4.1rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.error .errorSection p{
+    color: white;
+}

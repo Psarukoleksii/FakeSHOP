@@ -3,6 +3,7 @@ import './menuList.css';
 import MenuItem from "../menuItem/menuItem";
 import Slider from "../slider/slider";
 import {MenuFilter} from "../menuFilter/menuFilter";
+import {Error} from "../../error/error";
 
 export const MenuList = ({products, handAddProduct}) => {
 
@@ -37,6 +38,8 @@ export const MenuList = ({products, handAddProduct}) => {
     }
 
 
+    const asd = state.length !== 0 ? state.map((product) => <MenuItem product={product} handAddProduct={handAddProduct}
+                                                                      key={product.id}/>) : <Error />
     return (
         <div>
             <div className={'menuMainText'}>
@@ -64,8 +67,7 @@ export const MenuList = ({products, handAddProduct}) => {
             </div>
             <div>
                 {
-                    state.map((product) => <MenuItem product={product} handAddProduct={handAddProduct}
-                                                     key={product.id}/>)
+                   asd
                 }
             </div>
         </div>

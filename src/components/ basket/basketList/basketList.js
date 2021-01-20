@@ -1,5 +1,6 @@
 import {BasketItem} from "../basketItem/basketItem";
-import React, {useState} from "react";
+import React from "react";
+import './basketList.css'
 
 export const BasketList = ({numb, handChange, deleteProd}) =>{
 
@@ -8,10 +9,8 @@ export const BasketList = ({numb, handChange, deleteProd}) =>{
     })
     let setSum = sumNumb.reduce((acc, el)=> ( acc += el), 0)
 
-
-
     return (
-        <div >
+        <div className={'sectionListProduct'}>
         { numb.map(value => {
                     return (
                         <BasketItem key={value.id} value={value} handChange={handChange} deleteProd={deleteProd} />
@@ -19,7 +18,7 @@ export const BasketList = ({numb, handChange, deleteProd}) =>{
                 }
             )
         }
-        Сумма замовлення:{setSum.toFixed(2)}
+        <span>Sum order: {setSum.toFixed(2)} $</span>
         </div>
     )
 }

@@ -1,0 +1,40 @@
+.basketListItem .BasketListSection h2{
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-size: 1.3rem;
+}
+
+.basketListItem{
+    margin-top: 2rem;
+}
+
+.BasketListSection{
+    margin: 0 auto;
+    text-align: center;
+    padding: 1.8rem;
+    max-width: 50rem;
+    background: none;
+    border: 2px solid darkslategrey;
+    border-radius: 1rem;
+    color: darkslategrey;
+}
+
+.basketListItem .BasketListSection button{
+    margin-left: 2rem;
+    padding: 8px 20px;
+    background: #10101d;
+    border-radius: 4px;
+    border: 1px solid black;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+.basketListItem .BasketListSection input {
+    margin-left: 2rem;
+    height: 1.9rem;
+    width: 2rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid darkslategrey;
+}

@@ -4,7 +4,15 @@ export class ProductService {
     }
 
     getProducts() {
-        return fetch(this.baseUrl).then(v => v.json())
+        return fetch(this.baseUrl).then(resp => {
+            console.log(resp)
+            if (resp.status === 200) {
+                console.log(resp.status)
+                return resp.json();
+            } else {
+                return Promise.reject('is not ok: ' + resp.status)
+            }
+        })
     }
 }
 
