@@ -23,6 +23,8 @@ navbar ul{
     grid-area: navbar;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    margin: 0;
 }
 navbar ul li{
     display: inline-block;
@@ -44,5 +46,6 @@ navbar ul a{
 navbar ul a:hover{
     transition: 1s;
     transform: scale(1.09);
+    color: white;
 }
 

@@ -3,9 +3,11 @@ import './error.css';
 
 export const Error = () =>{
     return (
-        <div>
-            404
-            Page not found
+        <div className={'error'}>
+            <div className={'errorSection'}>
+                <h2>404</h2>
+                <p>Page not found</p>
+            </div>
         </div>
     )
 }

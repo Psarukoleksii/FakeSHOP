@@ -1,0 +1,52 @@
+.statusOrder h2{
+    text-align: left;
+    color: darkslategrey;
+}
+
+.statusOrder div.statusOrderSection span{
+    color: yellowgreen;
+}
+
+.statusOrder .statusOrderSection{
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    border: 1px solid darkslategrey;
+}
+
+.statusOrder{
+    margin-top: 2rem
+}
+
+.statusOrder .statusOrderSection p:first-letter{
+    text-transform: capitalize;
+}
+
+.statusOrder .statusOrderSection p{
+    font-size: 1.1rem;
+    color: darkslategrey;
+    margin-bottom: 0;
+    margin-top: .9rem;
+}
+
+.statusOrder .orderWarning{
+    max-width: 30rem;
+    min-height: 5rem;
+    border: 1px solid darkslategrey;
+    border-radius: .5rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: darkslategrey;
+    color: white;
+}
+
+.statusOrder .orderWarning p{
+    margin: 0;
+}
+
+.statusOrder .orderWarning span{
+    color: greenyellow;
+}
+
+

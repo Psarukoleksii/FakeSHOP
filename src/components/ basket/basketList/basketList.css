@@ -1,0 +1,11 @@
+.sectionListProduct span{
+    display: block;
+    max-width: 30rem;
+    background: darkslategrey;
+    margin: 2rem auto;
+    padding: 1.8rem;
+    border-radius: 0.5rem;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
